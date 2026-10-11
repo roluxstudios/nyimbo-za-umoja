@@ -1,647 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="NYIMBO ZA UMOJA — Your destination for songs, music and uplifting melodies.">
-
-    <meta name="theme-color" content="#0f172a">
-
-    <title>NYIMBO ZA UMOJA | Songs and Music</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f8fafc;
-            color: #172033;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #0f172a;
-            color: white;
-            padding: 16px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
-        }
-
-        .nav {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .logo {
-            font-size: 19px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            opacity: 0.9;
-        }
-
-        .nav-link:hover {
-            opacity: 1;
-        }
-
-        .language-select {
-            border: 1px solid rgba(255,255,255,0.25);
-            background: rgba(255,255,255,0.08);
-            color: white;
-            border-radius: 8px;
-            padding: 8px 10px;
-            font-size: 13px;
-            cursor: pointer;
-            outline: none;
-        }
-
-        .language-select option {
-            color: #111827;
-            background: white;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #2563eb 100%);
-            color: white;
-            padding: 85px 20px 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "♪";
-            position: absolute;
-            font-size: 260px;
-            right: -40px;
-            top: -90px;
-            opacity: 0.05;
-        }
-
-        .hero::after {
-            content: "♫";
-            position: absolute;
-            font-size: 200px;
-            left: -30px;
-            bottom: -80px;
-            opacity: 0.05;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .music-icon {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 25px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 42px;
-            border: 1px solid rgba(255,255,255,0.2);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .hero h1 {
-            font-size: clamp(38px, 8vw, 70px);
-            line-height: 1.05;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(18px, 3vw, 23px);
-            opacity: 0.9;
-            max-width: 650px;
-            margin: 0 auto 35px;
-        }
-
-        .download-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: white;
-            color: #0f172a;
-            text-decoration: none;
-            padding: 17px 32px;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 800;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .download-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-
-        .version {
-            margin-top: 18px;
-            font-size: 14px;
-            opacity: 0.7;
-        }
-
-        main {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #0f172a;
-        }
-
-        .section-title p {
-            color: #64748b;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .feature {
-            background: white;
-            padding: 32px 25px;
-            border-radius: 18px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 8px 25px rgba(15,23,42,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(15,23,42,0.1);
-        }
-
-        .feature-icon {
-            width: 65px;
-            height: 65px;
-            margin: 0 auto 20px;
-            border-radius: 16px;
-            background: #eff6ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-        }
-
-        .feature h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-            color: #0f172a;
-        }
-
-        .feature p {
-            color: #64748b;
-            font-size: 15px;
-        }
-
-        .about {
-            margin-top: 70px;
-            background: #0f172a;
-            color: white;
-            border-radius: 25px;
-            padding: 55px 35px;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 32px;
-            margin-bottom: 18px;
-        }
-
-        .about p {
-            max-width: 700px;
-            margin: auto;
-            color: #cbd5e1;
-            font-size: 17px;
-        }
-
-        .download-section {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .download-section h2 {
-            font-size: 32px;
-            color: #0f172a;
-            margin-bottom: 12px;
-        }
-
-        .download-section p {
-            color: #64748b;
-            margin-bottom: 30px;
-        }
-
-        .download-button-dark {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            padding: 16px 30px;
-            border-radius: 12px;
-            font-weight: 800;
-            font-size: 17px;
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .download-button-dark:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            background: #020617;
-            color: #94a3b8;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 14px;
-        }
-
-        footer strong {
-            color: white;
-        }
-
-        @media (max-width: 750px) {
-            header {
-                padding: 14px 16px;
-            }
-
-            .nav {
-                align-items: flex-start;
-            }
-
-            .logo {
-                font-size: 16px;
-            }
-
-            .nav-right {
-                gap: 10px;
-            }
-
-            .nav-link {
-                display: none;
-            }
-
-            .language-select {
-                padding: 7px 8px;
-                font-size: 12px;
-            }
-
-            .hero {
-                padding: 65px 20px 80px;
-            }
-
-            .hero h1 {
-                letter-spacing: -1px;
-            }
-
-            .music-icon {
-                width: 75px;
-                height: 75px;
-                font-size: 34px;
-            }
-
-            .download-button {
-                width: 100%;
-                max-width: 340px;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .about {
-                padding: 40px 25px;
-            }
-
-            .about h2,
-            .download-section h2,
-            .section-title h2 {
-                font-size: 27px;
-            }
-
-            main {
-                padding: 55px 18px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .logo {
-                font-size: 14px;
-            }
-
-            .hero {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero-subtitle {
-                font-size: 17px;
-            }
-
-            .download-button {
-                font-size: 16px;
-                padding: 15px 20px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="NYIMBO ZA UMOJA — a simple, lightweight Android app for your Umoja songs.">
+<meta name="theme-color" content="#1b2559">
 <meta name="google-site-verification" content="EwuKi2nYAp7Csap_HDh_r73a25KLR53MQ2I4If9VNqw" />
-</head>
+<title>NYIMBO ZA UMOJA | Songs and Music</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f6fb; --surface:#ffffff; --ink:#161c3a; --muted:#5a6280; --line:#dfe3ee;
+  --brand:#1b2559; --brand-2:#2d3a86; --sun:#f2a93b; --sun-ink:#3a2500;
+  --hero-a:#141b45; --hero-b:#26337a;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1227; --surface:#161c3a; --ink:#eef0fa; --muted:#a3abc9; --line:#262e56;
+    --brand:#aab6ff; --brand-2:#c3ccff;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1227; --surface:#161c3a; --ink:#eef0fa; --muted:#a3abc9; --line:#262e56;
+  --brand:#aab6ff; --brand-2:#c3ccff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.3px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:9px;background:var(--brand-2);color:#fff;display:grid;place-items:center;font-style:normal;font-size:16px}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-right a.l{font-size:15px;font-weight:500;text-decoration:none;color:var(--muted)}
+.nav-right a.l:hover{color:var(--ink)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
+.lang button{font:600 13px var(--sans);border:0;background:none;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--brand-2);color:#fff}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--hero-a),var(--hero-b));color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:76px;padding-bottom:84px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,6vw,62px);line-height:1.06;letter-spacing:-1.2px;margin-bottom:20px}
+.hero p.lead{font-size:clamp(17px,2.2vw,20px);color:#d5dafa;max-width:30em;margin-bottom:34px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--sun);color:var(--sun-ink);font-weight:700;font-size:17px;text-decoration:none;padding:15px 26px;border-radius:14px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.32)}
+.meta{font-size:14px;color:#b9c0ee}
+
+/* phone */
+.phone{width:min(270px,100%);margin:0 auto;aspect-ratio:9/18;background:#0b0f26;border-radius:38px;padding:11px;box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 2px rgba(255,255,255,.08);transform:rotate(3deg)}
+.screen{height:100%;border-radius:28px;background:linear-gradient(180deg,#2a3790,#161c4a);padding:22px 18px;display:flex;flex-direction:column;color:#fff}
+.screen small{color:#b9c0ee;font-size:12px}
+.screen h4{font-family:var(--serif);font-size:20px;margin:2px 0 14px}
+.row{display:flex;align-items:center;gap:11px;padding:10px 0;border-top:1px solid rgba(255,255,255,.1);font-size:14px}
+.row b{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:13px}
+.row.on b{background:var(--sun);color:var(--sun-ink)}
+.row.on{font-weight:700}
+.eq{margin-left:auto;display:flex;gap:2px;align-items:flex-end;height:14px}
+.eq span{width:3px;background:var(--sun);border-radius:2px;animation:eq 1s ease-in-out infinite}
+.eq span:nth-child(2){animation-delay:.2s}.eq span:nth-child(3){animation-delay:.4s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+.bar{margin-top:auto;height:4px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
+.bar i{display:block;width:38%;height:100%;background:var(--sun)}
+
+/* sections */
+section.s{padding:84px 0}
+h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.6px;margin-bottom:14px}
+.sub{color:var(--muted);max-width:34em;margin-bottom:44px;font-size:18px}
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pt{padding:4px 4px 0}
+.pt .ic{font-size:26px;margin-bottom:12px}
+.pt h3{font-size:19px;margin-bottom:6px}
+.pt p{color:var(--muted);font-size:16px}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:44px}
+ol{list-style:none;counter-reset:s;display:grid;gap:18px}
+ol li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;color:var(--ink)}
+ol li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--brand-2);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center}
+.note{color:var(--muted);font-size:15px;margin-top:16px}
+
+.final{text-align:center;background:linear-gradient(160deg,var(--hero-a),var(--hero-b));color:#fff;border-radius:28px;padding:64px 24px}
+.final h2{margin-bottom:10px}
+.final p{color:#d5dafa;margin-bottom:28px}
+
+footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:14px;padding:30px 20px 40px}
+footer strong{color:var(--ink)}
+
+@media(max-width:800px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:52px;padding-bottom:64px;gap:44px}
+  .points{grid-template-columns:1fr;gap:26px}
+  .panel{grid-template-columns:1fr;padding:28px 22px;gap:28px}
+  .nav-right a.l{display:none}
+  section.s{padding:60px 0}
+  .btn{width:100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
 <body>
 
 <header>
-    <div class="nav">
-
-        <div class="logo">
-            🎵 NYIMBO ZA UMOJA
-        </div>
-
-        <div class="nav-right">
-            <a href="#about" class="nav-link" data-i18n="aboutNav">About</a>
-
-            <select
-                id="languageSelect"
-                class="language-select"
-                aria-label="Select language"
-            >
-                <option value="en">🇬🇧 English</option>
-                <option value="sw">🇰🇪 Kiswahili</option>
-            </select>
-        </div>
-
+  <div class="wrap nav">
+    <a href="#top" class="logo"><i aria-hidden="true">♪</i>NYIMBO ZA UMOJA</a>
+    <div class="nav-right">
+      <a class="l" href="#install" data-i18n="navInstall">How to install</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="sw" aria-pressed="false">SW</button>
+      </div>
     </div>
+  </div>
 </header>
 
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="music-icon">
-            🎵
-        </div>
-
-        <h1>
-            NYIMBO ZA UMOJA
-        </h1>
-
-        <p class="hero-subtitle" data-i18n="heroSubtitle">
-            Enjoy your Umoja songs through our simple, lightweight Android application.
-        </p>
-
-        <a
-            class="download-button"
-            href="https://github.com/roluxstudios/nyimbo-za-umoja/releases/download/v1.0.0/NYIMBO-ZA-UMOJA-v1.0.0.apk"
-        >
-            📥 <span data-i18n="downloadApp">DOWNLOAD APP</span>
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1 data-i18n="heroTitle">Your Umoja songs, in your pocket.</h1>
+      <p class="lead" data-i18n="heroSubtitle">A simple, lightweight Android app that makes it easy to sing along, wherever you are.</p>
+      <div class="cta">
+        <a class="btn" href="https://github.com/roluxstudios/nyimbo-za-umoja/releases/download/v1.0.0/NYIMBO-ZA-UMOJA-v1.0.0.apk">
+          <span aria-hidden="true">⬇</span><span data-i18n="downloadApp">Download the app</span>
         </a>
-
-        <p class="version" data-i18n="version">
-            Version 1.0.0 • Android
-        </p>
-
+        <span class="meta" data-i18n="version">Version 1.0.0 for Android</span>
+      </div>
     </div>
-
+    <div class="phone" aria-hidden="true">
+      <div class="screen">
+        <small data-i18n="phoneLabel">Now playing</small>
+        <h4>Nyimbo za Umoja</h4>
+        <div class="row on"><b>♪</b><span data-i18n="song1">Wimbo wa kwanza</span><span class="eq"><span></span><span></span><span></span></span></div>
+        <div class="row"><b>♪</b><span data-i18n="song2">Wimbo wa pili</span></div>
+        <div class="row"><b>♪</b><span data-i18n="song3">Wimbo wa tatu</span></div>
+        <div class="bar"><i></i></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<main>
-
-    <div class="section-title">
-
-        <h2 data-i18n="whyTitle">
-            Why NYIMBO ZA UMOJA?
-        </h2>
-
-        <p data-i18n="whySubtitle">
-            A simple application designed to make enjoying your songs easy.
-        </p>
-
+<section class="s">
+  <div class="wrap">
+    <h2 data-i18n="whyTitle">Made to be simple</h2>
+    <p class="sub" data-i18n="whySubtitle">No clutter and no fuss. Just open the app and enjoy your songs.</p>
+    <div class="points">
+      <div class="pt"><div class="ic" aria-hidden="true">🎶</div><h3 data-i18n="songsTitle">Your songs</h3><p data-i18n="songsText">Enjoy your collection of Umoja songs in one place on your phone.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">👋</div><h3 data-i18n="easyTitle">Easy for everyone</h3><p data-i18n="easyText">A clear, friendly layout that feels comfortable for every age, every day.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">🪶</div><h3 data-i18n="lightTitle">Light on your phone</h3><p data-i18n="lightText">Small and focused, so it stays quick and out of your way.</p></div>
     </div>
+  </div>
+</section>
 
-    <div class="features">
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                🎶
-            </div>
-
-            <h3 data-i18n="songsTitle">
-                Songs
-            </h3>
-
-            <p data-i18n="songsText">
-                Enjoy your collection of Umoja songs through your Android application.
-            </p>
-
-        </div>
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                📱
-            </div>
-
-            <h3 data-i18n="easyTitle">
-                Easy to Use
-            </h3>
-
-            <p data-i18n="easyText">
-                A simple interface designed for comfortable everyday use on your phone.
-            </p>
-
-        </div>
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                ⚡
-            </div>
-
-            <h3 data-i18n="lightTitle">
-                Lightweight
-            </h3>
-
-            <p data-i18n="lightText">
-                Designed to be simple and focused, without unnecessary complications.
-            </p>
-
-        </div>
-
+<section class="s" id="install" style="padding-top:0">
+  <div class="wrap">
+    <div class="panel">
+      <div>
+        <h2 data-i18n="installTitle">Getting started takes a minute</h2>
+        <p class="note" data-i18n="installNote">The app is installed straight from the download, so your phone may ask for a quick permission the first time.</p>
+      </div>
+      <ol>
+        <li data-i18n="step1">Tap Download the app and wait for the file to finish.</li>
+        <li data-i18n="step2">Open the downloaded file from your notifications or Downloads folder.</li>
+        <li data-i18n="step3">If asked, allow installing from your browser, then tap Install.</li>
+        <li data-i18n="step4">Open NYIMBO ZA UMOJA and start singing.</li>
+      </ol>
     </div>
+  </div>
+</section>
 
-    <section class="about" id="about">
-
-        <h2 data-i18n="aboutTitle">
-            Welcome to NYIMBO ZA UMOJA
-        </h2>
-
-        <p data-i18n="aboutText">
-            NYIMBO ZA UMOJA is an Android application that gives you an easy way to enjoy your Umoja songs. Download the app and get started today.
-        </p>
-
-    </section>
-
-</main>
-
-<section class="download-section">
-
-    <h2 data-i18n="readyTitle">
-        Ready to get started?
-    </h2>
-
-    <p data-i18n="readyText">
-        Download NYIMBO ZA UMOJA for Android.
-    </p>
-
-    <a
-        class="download-button-dark"
-        href="https://github.com/roluxstudios/nyimbo-za-umoja/releases/download/v1.0.0/NYIMBO-ZA-UMOJA-v1.0.0.apk"
-    >
-        📥 <span data-i18n="downloadFull">DOWNLOAD NYIMBO ZA UMOJA</span>
-    </a>
-
+<section class="s" style="padding-top:0">
+  <div class="wrap">
+    <div class="final">
+      <h2 data-i18n="readyTitle">Ready to sing together?</h2>
+      <p data-i18n="readyText">Get NYIMBO ZA UMOJA for Android today.</p>
+      <a class="btn" href="https://github.com/roluxstudios/nyimbo-za-umoja/releases/download/v1.0.0/NYIMBO-ZA-UMOJA-v1.0.0.apk">
+        <span aria-hidden="true">⬇</span><span data-i18n="downloadFull">Download NYIMBO ZA UMOJA</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <footer>
-
-    <p>
-        © 2026
-        <strong>NYIMBO ZA UMOJA</strong>.
-        <span data-i18n="rights">All rights reserved.</span>
-    </p>
-
+  <p>© 2026 <strong>NYIMBO ZA UMOJA</strong>. <span data-i18n="rights">All rights reserved.</span></p>
 </footer>
 
 <script>
-    const translations = {
-        en: {
-            aboutNav: "About",
-            heroSubtitle: "Enjoy your Umoja songs through our simple, lightweight Android application.",
-            downloadApp: "DOWNLOAD APP",
-            version: "Version 1.0.0 • Android",
-            whyTitle: "Why NYIMBO ZA UMOJA?",
-            whySubtitle: "A simple application designed to make enjoying your songs easy.",
-            songsTitle: "Songs",
-            songsText: "Enjoy your collection of Umoja songs through your Android application.",
-            easyTitle: "Easy to Use",
-            easyText: "A simple interface designed for comfortable everyday use on your phone.",
-            lightTitle: "Lightweight",
-            lightText: "Designed to be simple and focused, without unnecessary complications.",
-            aboutTitle: "Welcome to NYIMBO ZA UMOJA",
-            aboutText: "NYIMBO ZA UMOJA is an Android application that gives you an easy way to enjoy your Umoja songs. Download the app and get started today.",
-            readyTitle: "Ready to get started?",
-            readyText: "Download NYIMBO ZA UMOJA for Android.",
-            downloadFull: "DOWNLOAD NYIMBO ZA UMOJA",
-            rights: "All rights reserved."
-        },
-
-        sw: {
-            aboutNav: "Kuhusu",
-            heroSubtitle: "Furahia nyimbo zako za Umoja kupitia programu yetu rahisi na nyepesi ya Android.",
-            downloadApp: "PAKUA APP",
-            version: "Toleo 1.0.0 • Android",
-            whyTitle: "Kwa nini NYIMBO ZA UMOJA?",
-            whySubtitle: "Programu rahisi iliyoundwa kukuwezesha kufurahia nyimbo zako kwa urahisi.",
-            songsTitle: "Nyimbo",
-            songsText: "Furahia mkusanyiko wa nyimbo za Umoja kupitia programu yako ya Android.",
-            easyTitle: "Rahisi Kutumia",
-            easyText: "Muonekano rahisi ulioundwa kwa matumizi ya kila siku kwenye simu yako.",
-            lightTitle: "Nyepesi",
-            lightText: "Imeundwa kuwa rahisi na yenye kuzingatia unachohitaji bila mambo yasiyo ya lazima.",
-            aboutTitle: "Karibu NYIMBO ZA UMOJA",
-            aboutText: "NYIMBO ZA UMOJA ni programu ya Android inayokupa njia rahisi ya kufurahia nyimbo zako za Umoja. Pakua programu na anza kutumia leo.",
-            readyTitle: "Uko tayari kuanza?",
-            readyText: "Pakua NYIMBO ZA UMOJA kwa Android.",
-            downloadFull: "PAKUA NYIMBO ZA UMOJA",
-            rights: "Haki zote zimehifadhiwa."
-        }
-    };
-
-    const languageSelect = document.getElementById("languageSelect");
-
-    function setLanguage(language) {
-        const selected = translations[language] ? language : "en";
-
-        document.documentElement.lang = selected;
-
-        document.querySelectorAll("[data-i18n]").forEach(element => {
-            const key = element.getAttribute("data-i18n");
-
-            if (translations[selected][key]) {
-                element.textContent = translations[selected][key];
-            }
-        });
-
-        localStorage.setItem("nyimboLanguage", selected);
-        languageSelect.value = selected;
-    }
-
-    const savedLanguage = localStorage.getItem("nyimboLanguage") || "en";
-
-    setLanguage(savedLanguage);
-
-    languageSelect.addEventListener("change", function () {
-        setLanguage(this.value);
-    });
+const T={
+en:{navInstall:"How to install",heroTitle:"Your Umoja songs, in your pocket.",heroSubtitle:"A simple, lightweight Android app that makes it easy to sing along, wherever you are.",downloadApp:"Download the app",version:"Version 1.0.0 for Android",phoneLabel:"Now playing",song1:"First song",song2:"Second song",song3:"Third song",whyTitle:"Made to be simple",whySubtitle:"No clutter and no fuss. Just open the app and enjoy your songs.",songsTitle:"Your songs",songsText:"Enjoy your collection of Umoja songs in one place on your phone.",easyTitle:"Easy for everyone",easyText:"A clear, friendly layout that feels comfortable for every age, every day.",lightTitle:"Light on your phone",lightText:"Small and focused, so it stays quick and out of your way.",installTitle:"Getting started takes a minute",installNote:"The app is installed straight from the download, so your phone may ask for a quick permission the first time.",step1:"Tap Download the app and wait for the file to finish.",step2:"Open the downloaded file from your notifications or Downloads folder.",step3:"If asked, allow installing from your browser, then tap Install.",step4:"Open NYIMBO ZA UMOJA and start singing.",readyTitle:"Ready to sing together?",readyText:"Get NYIMBO ZA UMOJA for Android today.",downloadFull:"Download NYIMBO ZA UMOJA",rights:"All rights reserved."},
+sw:{navInstall:"Jinsi ya kusakinisha",heroTitle:"Nyimbo zako za Umoja, mfukoni mwako.",heroSubtitle:"Programu rahisi na nyepesi ya Android inayokuwezesha kuimba popote ulipo.",downloadApp:"Pakua programu",version:"Toleo 1.0.0 la Android",phoneLabel:"Inachezwa sasa",song1:"Wimbo wa kwanza",song2:"Wimbo wa pili",song3:"Wimbo wa tatu",whyTitle:"Imeundwa kuwa rahisi",whySubtitle:"Hakuna mambo mengi wala usumbufu. Fungua programu na ufurahie nyimbo zako.",songsTitle:"Nyimbo zako",songsText:"Furahia mkusanyiko wako wa nyimbo za Umoja mahali pamoja kwenye simu yako.",easyTitle:"Rahisi kwa kila mtu",easyText:"Muonekano wazi na wa kirafiki unaofaa kila rika, kila siku.",lightTitle:"Nyepesi kwenye simu yako",lightText:"Ndogo na iliyolenga mambo muhimu, hivyo ni ya haraka na haikusumbui.",installTitle:"Kuanza kunachukua dakika moja",installNote:"Programu husakinishwa moja kwa moja kutoka kwenye faili uliyopakua, kwa hiyo simu yako inaweza kuomba ruhusa fupi mara ya kwanza.",step1:"Gusa Pakua programu na usubiri faili likamilike kupakuliwa.",step2:"Fungua faili hilo kutoka kwenye arifa zako au folda ya Downloads.",step3:"Ukiulizwa, ruhusu kusakinisha kutoka kwenye kivinjari chako, kisha gusa Sakinisha.",step4:"Fungua NYIMBO ZA UMOJA na uanze kuimba.",readyTitle:"Tayari kuimba pamoja?",readyText:"Pata NYIMBO ZA UMOJA kwa Android leo.",downloadFull:"Pakua NYIMBO ZA UMOJA",rights:"Haki zote zimehifadhiwa."}
+};
+const btns=document.querySelectorAll(".lang button");
+function setLang(l){
+  const s=T[l]?l:"en";
+  document.documentElement.lang=s;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const v=T[s][el.dataset.i18n];if(v)el.textContent=v});
+  btns.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===s)));
+  try{localStorage.setItem("nyimboLanguage",s)}catch(e){}
+}
+let saved="en";
+try{saved=localStorage.getItem("nyimboLanguage")||"en"}catch(e){}
+setLang(saved);
+btns.forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
 </script>
-
 </body>
 </html>
