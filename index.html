@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="NYIMBO ZA UMOJA — a simple, lightweight Android app for your Umoja songs.">
+<meta name="description" content="NYIMBO ZA UMOJA: a free Android app with 100+ Swahili gospel hymns. Read, search and sing along offline.">
 <meta name="theme-color" content="#2e4a00">
+<meta property="og:title" content="NYIMBO ZA UMOJA | Swahili Gospel Hymns, offline">
+<meta property="og:description" content="Free Android app with 100+ Swahili gospel hymns. Read, search and sing along offline.">
+<meta property="og:type" content="website">
 <meta name="google-site-verification" content="EwuKi2nYAp7Csap_HDh_r73a25KLR53MQ2I4If9VNqw" />
-<title>NYIMBO ZA UMOJA | Songs and Music</title>
+<title>NYIMBO ZA UMOJA | Swahili Gospel Hymns, offline</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
@@ -14,7 +17,7 @@
 :root{
   --bg:#f5f7ef; --surface:#ffffff; --ink:#1c2412; --muted:#5c6650; --line:#e0e6d0;
   --brand:#3f6200; --brand-2:#4f7a00; --sun:#f2b84b; --sun-ink:#3a2a00;
-  --hero-a:#1d3000; --hero-b:#4a7200;
+  --hero-a:#1d3000; --hero-b:#4a7200; --wa:#25d366;
   --serif:"Fraunces",Georgia,"Times New Roman",serif;
   --sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
 }
@@ -36,30 +39,30 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 
-/* header */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.3px;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.3px;text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
 .logo i{width:30px;height:30px;border-radius:9px;background:var(--brand-2);color:#fff;display:grid;place-items:center;font-style:normal;font-size:16px}
-.nav-right{display:flex;align-items:center;gap:18px}
+.nav-right{display:flex;align-items:center;gap:20px}
 .nav-right a.l{font-size:15px;font-weight:500;text-decoration:none;color:var(--muted)}
 .nav-right a.l:hover{color:var(--ink)}
 .lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
 .lang button{font:600 13px var(--sans);border:0;background:none;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--brand-2);color:#fff}
 
-/* hero */
 .hero{background:linear-gradient(160deg,var(--hero-a),var(--hero-b));color:#fff;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:76px;padding-bottom:84px}
 .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,6vw,62px);line-height:1.06;letter-spacing:-1.2px;margin-bottom:20px}
 .hero p.lead{font-size:clamp(17px,2.2vw,20px);color:#dfeac4;max-width:30em;margin-bottom:34px}
 .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--sun);color:var(--sun-ink);font-weight:700;font-size:17px;text-decoration:none;padding:15px 26px;border-radius:14px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--sun);color:var(--sun-ink);font-weight:700;font-size:17px;text-decoration:none;padding:15px 26px;border-radius:14px;border:0;cursor:pointer;font-family:var(--sans);transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.32)}
+.btn.wa{background:var(--wa);color:#04210f}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
 .meta{font-size:14px;color:#c3d49a}
 
-/* phone */
 .phone{width:min(280px,100%);margin:0 auto;aspect-ratio:9/18;background:#0b0d08;border-radius:38px;padding:11px;box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 2px rgba(255,255,255,.08);transform:rotate(3deg)}
+.phone.flat{transform:rotate(-2deg)}
 .screen{height:100%;border-radius:28px;background:#2f2f2f;color:#fff;overflow:hidden;display:flex;flex-direction:column;font-size:13px}
 .ab{background:#669900;padding:16px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:500;letter-spacing:.2px}
 .tabs{display:flex;gap:8px;padding:10px}
@@ -68,54 +71,73 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:co
 .srch{margin:0 14px 4px;padding:8px 2px;border-bottom:1px solid #666;color:#999}
 .hy{padding:11px 14px;border-top:1px solid #444;font-family:Georgia,serif;font-size:13px}
 .hy:first-of-type{border-top:0}
-@keyframes eq{0%,100%{height:4px}50%{height:14px}}
-
-
-.read{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-.read .ph{order:-1}
-.phone.flat{transform:rotate(-2deg)}
-.rt{margin:0;padding:6px 18px;font:12px/1.5 Georgia,serif;color:#fff}.rt.ch{color:#3aa0e0;font-style:italic}
-.rb{display:grid;gap:7px;padding:6px 20px}
-.rb i{display:block;height:8px;border-radius:5px;background:rgba(255,255,255,.78)}
-.rb.ch i{background:#3aa0e0}
 .rn{display:flex;justify-content:space-between;align-items:center;padding:14px 20px 8px;font-size:18px}
 .rn em{font-style:normal;color:#aaa;font-size:15px}
-.sw{width:30px;height:16px;border-radius:9px;background:#555;position:relative;margin-left:6px}.sw::after{content:"";position:absolute;left:2px;top:2px;width:12px;height:12px;border-radius:50%;background:#ddd}
-.checks{display:grid;gap:12px;margin-top:22px;list-style:none}
-.checks li{display:flex;gap:12px;align-items:flex-start;color:var(--ink)}
-.checks li::before{content:"\2713";flex:none;width:24px;height:24px;border-radius:50%;background:var(--brand-2);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center;margin-top:2px}
-@media(max-width:800px){.read{grid-template-columns:1fr;gap:40px}.read .ph{order:0}}
+.sw{width:30px;height:16px;border-radius:9px;background:#555;position:relative;margin-left:6px}
+.sw::after{content:"";position:absolute;left:2px;top:2px;width:12px;height:12px;border-radius:50%;background:#ddd}
+.rt{margin:0;padding:6px 18px;font:12px/1.5 Georgia,serif;color:#fff}
+.rt.ch{color:#3aa0e0;font-style:italic}
 
-/* sections */
 section.s{padding:84px 0}
+section.s.t0{padding-top:0}
 h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.6px;margin-bottom:14px}
 .sub{color:var(--muted);max-width:34em;margin-bottom:44px;font-size:18px}
-.points{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.pt{padding:4px 4px 0}
-.pt .ic{font-size:26px;margin-bottom:12px}
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 26px}
+.pt .ic{font-size:26px;margin-bottom:10px}
 .pt h3{font-size:19px;margin-bottom:6px}
 .pt p{color:var(--muted);font-size:16px}
 
+.read{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.read .ph{order:-1}
+.checks{display:grid;gap:12px;margin-top:22px;list-style:none}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks li::before{content:"\2713";flex:none;width:24px;height:24px;border-radius:50%;background:var(--brand-2);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center;margin-top:2px}
+
+.idx input{width:100%;max-width:460px;font:500 17px var(--sans);padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 22px}
+.hi{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px 16px;font-family:Georgia,serif}
+.hi b{flex:none;min-width:34px;height:34px;border-radius:10px;background:var(--brand-2);color:#fff;font:700 14px var(--sans);display:grid;place-items:center;padding:0 6px}
+.more{color:var(--muted);margin-top:18px}
+.empty{display:none;color:var(--muted);margin-top:6px}
+
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:44px}
 ol{list-style:none;counter-reset:s;display:grid;gap:18px}
-ol li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;color:var(--ink)}
+ol li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
 ol li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--brand-2);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center}
 .note{color:var(--muted);font-size:15px;margin-top:16px}
 
-.final{text-align:center;background:linear-gradient(160deg,var(--hero-a),var(--hero-b));color:#fff;border-radius:28px;padding:64px 24px}
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;line-height:1;color:var(--brand)}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--muted);margin-top:10px;max-width:40em}
+details a{color:var(--brand);font-weight:700}
+
+.story{max-width:760px}
+.story p{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);line-height:1.45}
+
+.final{text-align:center;background:linear-gradient(160deg,var(--hero-a),var(--hero-b));color:#fff;border-radius:28px;padding:60px 24px}
 .final h2{margin-bottom:10px}
-.final p{color:#dfeac4;margin-bottom:28px}
+.final p{color:#dfeac4;margin-bottom:26px}
+.final .cta{justify-content:center}
+.direct{margin-top:26px;font-size:15px;color:#dfeac4}
+.direct a{color:#fff;font-weight:700}
 
 footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:14px;padding:30px 20px 40px}
 footer strong{color:var(--ink)}
+footer a{color:var(--brand);font-weight:700}
 
 @media(max-width:800px){
   .hero .wrap{grid-template-columns:1fr;padding-top:52px;padding-bottom:64px;gap:44px}
-  .points{grid-template-columns:1fr;gap:26px}
+  .points{grid-template-columns:1fr}
+  .read{grid-template-columns:1fr;gap:40px}.read .ph{order:0}
+  .grid{grid-template-columns:1fr}
   .panel{grid-template-columns:1fr;padding:28px 22px;gap:28px}
   .nav-right a.l{display:none}
   section.s{padding:60px 0}
-  .btn{width:100%;justify-content:center}
+  .btn{width:100%}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -126,7 +148,10 @@ footer strong{color:var(--ink)}
   <div class="wrap nav">
     <a href="#top" class="logo"><i aria-hidden="true">♪</i>NYIMBO ZA UMOJA</a>
     <div class="nav-right">
-      <a class="l" href="#install" data-i18n="navInstall">How to install</a>
+      <a class="l" href="#features" data-i18n="navFeatures">Features</a>
+      <a class="l" href="#hymns" data-i18n="navHymns">Hymns</a>
+      <a class="l" href="#faq" data-i18n="navFaq">FAQ</a>
+      <a class="l" href="#contact" data-i18n="navContact">Contact</a>
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="sw" aria-pressed="false">SW</button>
@@ -139,12 +164,12 @@ footer strong{color:var(--ink)}
   <div class="wrap">
     <div>
       <h1 data-i18n="heroTitle">Your Nyimbo Za Umoja hymns, always with you.</h1>
-      <p class="lead" data-i18n="heroSubtitle">100+ hymns in one simple Android app. Search, save your favorites and sing along, even without internet.</p>
+      <p class="lead" data-i18n="heroSubtitle">100+ Swahili gospel hymns in one simple Android app. Read, search and sing along, even without internet.</p>
       <div class="cta">
         <a class="btn" href="https://github.com/roluxstudios/nyimbo-za-umoja/releases/download/v1.0.0/NYIMBO-ZA-UMOJA-v1.0.0.apk">
           <span aria-hidden="true">⬇</span><span data-i18n="downloadApp">Download the app</span>
         </a>
-        <span class="meta" data-i18n="version">Version 1.0.0 for Android • Works offline</span>
+        <span class="meta" data-i18n="meta">Free for Android • Works offline</span>
       </div>
     </div>
     <div class="phone" aria-hidden="true">
@@ -164,19 +189,22 @@ footer strong{color:var(--ink)}
   </div>
 </section>
 
-<section class="s">
+<section class="s" id="features">
   <div class="wrap">
     <h2 data-i18n="whyTitle">Everything you need to sing</h2>
     <p class="sub" data-i18n="whySubtitle">Simple on purpose: find a hymn, open it, sing.</p>
     <div class="points">
-      <div class="pt"><div class="ic" aria-hidden="true">📖</div><h3 data-i18n="songsTitle">100+ hymns</h3><p data-i18n="songsText">The Nyimbo Za Umoja collection in one place, ready whenever you open the app.</p></div>
-      <div class="pt"><div class="ic" aria-hidden="true">📶</div><h3 data-i18n="easyTitle">Works offline</h3><p data-i18n="easyText">No data or Wi-Fi needed, so it is ready at church, at home or on the road.</p></div>
-      <div class="pt"><div class="ic" aria-hidden="true">🔎</div><h3 data-i18n="lightTitle">Search and favorites</h3><p data-i18n="lightText">Find a hymn by name or number, and keep the ones you love in Favorites.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">📖</div><h3 data-i18n="f1t">100+ hymns</h3><p data-i18n="f1p">The Nyimbo Za Umoja collection in one place, ready whenever you open the app.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">📶</div><h3 data-i18n="f2t">Works offline</h3><p data-i18n="f2p">No data or Wi-Fi needed, so it is ready at church, at home or on the road.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">🔎</div><h3 data-i18n="f3t">Search and favorites</h3><p data-i18n="f3p">Find a hymn by name or number, and keep the ones you love in Favorites.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">🌍</div><h3 data-i18n="f4t">English versions</h3><p data-i18n="f4p">Flip a switch to read a hymn in English. More are being added over time.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">🌗</div><h3 data-i18n="f5t">Read your way</h3><p data-i18n="f5p">Choose light, dark or your phone's look, pick your reading font, and keep the screen on while you sing.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">🔔</div><h3 data-i18n="f6t">Daily hymn reminder</h3><p data-i18n="f6p">Get one encouraging hymn as a daily notification, at the time you choose.</p></div>
     </div>
   </div>
 </section>
 
-<section class="s" style="padding-top:0">
+<section class="s t0">
   <div class="wrap read">
     <div>
       <h2 data-i18n="readTitle">Clear to read, easy to follow</h2>
@@ -184,8 +212,8 @@ footer strong{color:var(--ink)}
       <ul class="checks">
         <li data-i18n="read1">The chorus stands out in blue, so everyone knows when to join in.</li>
         <li data-i18n="read2">Move to the next or previous hymn with one tap.</li>
-        <li data-i18n="read4">Flip the switch to read a hymn in English. More English versions are being added.</li>
         <li data-i18n="read3">Tap the heart to save a hymn to your Favorites.</li>
+        <li data-i18n="read4">Flip the switch to read a hymn in English. More English versions are being added.</li>
       </ul>
     </div>
     <div class="ph">
@@ -193,14 +221,28 @@ footer strong{color:var(--ink)}
         <div class="screen">
           <div class="ab"><span>←</span><span>MWANANGU KARIBU</span><span>⋮</span></div>
           <div class="rn"><span>←</span><span>16.</span><span>→</span><em>♥</em><u class="sw"></u></div>
-          <p class="rt ">1. Nilipopotea katika dhambini,<br>Nilikuwa kama mwana mpotevu<br>Yesu alikuja kuniponya mimi,<br>Akanirudisha kwa Babangu</p><p class="rt ch">Mwanangu karibu, mwanangu karibu<br>Tukae na Yesu Mwokozi wangu,<br>Aliyeniponya kutoka dhambini<br>Akanirudisha kwa Babangu x2</p><p class="rt ">2. Malaika pale wananingojea,<br>Mji wa Kanaani wako na Yesu<br>Aliyeniponya kutoka dhambi,<br>Akanirudisha kwa Babangu</p><p class="rt ">3. Nikienda mbinguni nitafurahia,<br>Nikae na Yesu Mwokozi wangu<br>Aliyeniponya kutoka dhambini,<br>Akanirudisha kwa Babangu</p>
+          <p class="rt">1. Nilipopotea katika dhambini,<br>Nilikuwa kama mwana mpotevu<br>Yesu alikuja kuniponya mimi,<br>Akanirudisha kwa Babangu</p>
+          <p class="rt ch">Mwanangu karibu, mwanangu karibu<br>Tukae na Yesu Mwokozi wangu,<br>Aliyeniponya kutoka dhambini<br>Akanirudisha kwa Babangu x2</p>
+          <p class="rt">2. Malaika pale wananingojea,<br>Mji wa Kanaani wako na Yesu<br>Aliyeniponya kutoka dhambi,<br>Akanirudisha kwa Babangu</p>
+          <p class="rt">3. Nikienda mbinguni nitafurahia,<br>Nikae na Yesu Mwokozi wangu<br>Aliyeniponya kutoka dhambini,<br>Akanirudisha kwa Babangu</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="s" id="install" style="padding-top:0">
+<section class="s t0 idx" id="hymns">
+  <div class="wrap">
+    <h2 data-i18n="idxTitle">Browse the hymns</h2>
+    <p class="sub" style="margin-bottom:24px" data-i18n="idxSub">A taste of what is inside. Type a title or a number.</p>
+    <input id="q" type="search" autocomplete="off" aria-label="Search hymns" placeholder="Search...">
+    <div class="grid" id="list"></div>
+    <p class="empty" id="empty" data-i18n="idxEmpty">No match here, but the app has 100+ hymns to search.</p>
+    <p class="more" data-i18n="idxMore">...and many more inside the app.</p>
+  </div>
+</section>
+
+<section class="s t0" id="install">
   <div class="wrap">
     <div class="panel">
       <div>
@@ -217,32 +259,128 @@ footer strong{color:var(--ink)}
   </div>
 </section>
 
-<section class="s" style="padding-top:0">
+<section class="s t0" id="faq">
+  <div class="wrap faq">
+    <h2 data-i18n="faqTitle">Questions, answered</h2>
+    <details><summary><span data-i18n="q1">Is the app really free?</span></summary><p data-i18n="a1">Yes. NYIMBO ZA UMOJA is free to download and use.</p></details>
+    <details><summary><span data-i18n="q2">Do I need internet to read the hymns?</span></summary><p data-i18n="a2">No. Once the app is installed, the hymns work offline.</p></details>
+    <details><summary><span data-i18n="q3">Why does my phone ask for permission to install?</span></summary><p data-i18n="a3">The app is shared as a direct download instead of through an app store, so Android asks you to allow installs from your browser once. You can switch that permission off again after installing.</p></details>
+    <details><summary><span data-i18n="q4">Can I read hymns in English?</span></summary><p data-i18n="a4">Some hymns have an English version you can switch to with the toggle at the top of the hymn. More are being added over time.</p></details>
+    <details><summary><span data-i18n="q5">A hymn has a mistake, or I want one added.</span></summary><p><span data-i18n="a5">Tell us the hymn title or number and we will take a look.</span> <a data-wa="waFix" href="https://wa.me/254710641256" target="_blank" rel="noopener" data-i18n="a5l">Message us on WhatsApp</a></p></details>
+  </div>
+</section>
+
+<section class="s t0">
+  <div class="wrap story">
+    <h2 data-i18n="storyTitle">Made with love for the Church</h2>
+    <p data-i18n="storyText">NYIMBO ZA UMOJA is a complete collection of Swahili Gospel Hymns to unite believers in worship, developed by Rolux Studios for the Church in Kenya and beyond.</p>
+  </div>
+</section>
+
+<section class="s t0" id="contact">
+  <div class="wrap">
+    <div class="final">
+      <h2 data-i18n="contactTitle">Talk to us</h2>
+      <p data-i18n="contactText">Questions, feedback or a hymn to suggest? We would love to hear from you.</p>
+      <div class="cta">
+        <a class="btn wa" data-wa="waHello" href="https://wa.me/254710641256" target="_blank" rel="noopener"><span aria-hidden="true">💬</span><span data-i18n="waBtn">Chat on WhatsApp</span></a>
+        <a class="btn ghost" id="mail" href="mailto:roluxstudios735@gmail.com"><span aria-hidden="true">✉</span><span data-i18n="mailBtn">Send an email</span></a>
+        <a class="btn ghost" id="share" href="https://wa.me/" target="_blank" rel="noopener"><span aria-hidden="true">↗</span><span data-i18n="shareBtn">Share this app</span></a>
+      </div>
+      <p class="direct"><span data-i18n="directText">Prefer to call or text?</span> <a href="tel:+254710641256">+254 710 641 256</a> &nbsp;•&nbsp; <a href="mailto:roluxstudios735@gmail.com">roluxstudios735@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="s t0">
   <div class="wrap">
     <div class="final">
       <h2 data-i18n="readyTitle">Ready to sing together?</h2>
-      <p data-i18n="readyText">Get NYIMBO ZA UMOJA for Android today.</p>
-      <a class="btn" href="https://github.com/roluxstudios/nyimbo-za-umoja/releases/download/v1.0.0/NYIMBO-ZA-UMOJA-v1.0.0.apk">
-        <span aria-hidden="true">⬇</span><span data-i18n="downloadFull">Download NYIMBO ZA UMOJA</span>
-      </a>
+      <p data-i18n="readyText">Get NYIMBO ZA UMOJA for Android today. It is free.</p>
+      <div class="cta">
+        <a class="btn" href="https://github.com/roluxstudios/nyimbo-za-umoja/releases/download/v1.0.0/NYIMBO-ZA-UMOJA-v1.0.0.apk"><span aria-hidden="true">⬇</span><span data-i18n="downloadFull">Download NYIMBO ZA UMOJA</span></a>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 <strong>NYIMBO ZA UMOJA</strong>. <span data-i18n="rights">All rights reserved.</span></p>
+  <p>© 2026 <strong>NYIMBO ZA UMOJA</strong> by Rolux Studios. <span data-i18n="rights">All rights reserved.</span></p>
 </footer>
 
 <script>
 const T={
-en:{navInstall:"How to install",heroTitle:"Your Nyimbo Za Umoja hymns, always with you.",heroSubtitle:"100+ hymns in one simple Android app. Search, save your favorites and sing along, even without internet.",downloadApp:"Download the app",version:"Version 1.0.0 for Android \u2022 Works offline",whyTitle:"Everything you need to sing",whySubtitle:"Simple on purpose: find a hymn, open it, sing.",songsTitle:"100+ hymns",songsText:"The Nyimbo Za Umoja collection in one place, ready whenever you open the app.",easyTitle:"Works offline",easyText:"No data or Wi-Fi needed, so it is ready at church, at home or on the road.",lightTitle:"Search and favorites",lightText:"Find a hymn by name or number, and keep the ones you love in Favorites.",installTitle:"Getting started takes a minute",installNote:"The app is installed straight from the download, so your phone may ask for a quick permission the first time.",step1:"Tap Download the app and wait for the file to finish.",step2:"Open the downloaded file from your notifications or Downloads folder.",step3:"If asked, allow installing from your browser, then tap Install.",step4:"Open NYIMBO ZA UMOJA and start singing.",readyTitle:"Ready to sing together?",readyText:"Get NYIMBO ZA UMOJA for Android today.",downloadFull:"Download NYIMBO ZA UMOJA",rights:"All rights reserved.",readTitle:"Clear to read, easy to follow",readText:"Open any hymn and the words are right there, in large comfortable text.",read1:"The chorus stands out in blue, so everyone knows when to join in.",read2:"Move to the next or previous hymn with one tap.",read3:"Tap the heart to save a hymn to your Favorites.",read4:"Flip the switch to read a hymn in English. More English versions are being added."},
-sw:{navInstall:"Jinsi ya kusakinisha",heroTitle:"Nyimbo zako za Umoja, daima nawe.",heroSubtitle:"Zaidi ya nyimbo 100 katika programu moja rahisi ya Android. Tafuta, hifadhi uzipendazo na uimbe, hata bila intaneti.",downloadApp:"Pakua programu",version:"Toleo 1.0.0 la Android \u2022 Inafanya kazi bila intaneti",whyTitle:"Kila unachohitaji ili kuimba",whySubtitle:"Rahisi kwa makusudi: tafuta wimbo, ufungue, uimbe.",songsTitle:"Nyimbo 100+",songsText:"Mkusanyiko wa Umoja mahali pamoja, tayari kila unapofungua programu.",easyTitle:"Bila intaneti",easyText:"Hauhitaji data wala Wi-Fi, hivyo iko tayari kanisani, nyumbani au safarini.",lightTitle:"Tafuta na Vipendwa",lightText:"Tafuta wimbo kwa jina au namba, na uhifadhi uzipendazo kwenye Vipendwa.",installTitle:"Kuanza kunachukua dakika moja",installNote:"Programu husakinishwa moja kwa moja kutoka kwenye faili uliyopakua, kwa hiyo simu yako inaweza kuomba ruhusa fupi mara ya kwanza.",step1:"Gusa Pakua programu na usubiri faili likamilike kupakuliwa.",step2:"Fungua faili hilo kutoka kwenye arifa zako au folda ya Downloads.",step3:"Ukiulizwa, ruhusu kusakinisha kutoka kwenye kivinjari chako, kisha gusa Sakinisha.",step4:"Fungua NYIMBO ZA UMOJA na uanze kuimba.",readyTitle:"Tayari kuimba pamoja?",readyText:"Pata NYIMBO ZA UMOJA kwa Android leo.",downloadFull:"Pakua NYIMBO ZA UMOJA",rights:"Haki zote zimehifadhiwa.",readTitle:"Rahisi kusoma, rahisi kufuata",readText:"Fungua wimbo wowote na maneno yako hapo, kwa maandishi makubwa na yanayosomeka vizuri.",read1:"Kiitikio kinaonekana kwa rangi ya samawati, ili kila mtu ajue wakati wa kujiunga.",read2:"Nenda kwenye wimbo unaofuata au uliotangulia kwa kugusa mara moja.",read3:"Gusa moyo kuhifadhi wimbo kwenye Vipendwa.",read4:"Washa swichi kusoma wimbo kwa Kiingereza. Matoleo zaidi ya Kiingereza yanaongezwa."}
+en:{navFeatures:"Features",navHymns:"Hymns",navFaq:"FAQ",navContact:"Contact",
+heroTitle:"Your Nyimbo Za Umoja hymns, always with you.",heroSubtitle:"100+ Swahili gospel hymns in one simple Android app. Read, search and sing along, even without internet.",downloadApp:"Download the app",meta:"Free for Android \u2022 Works offline",
+whyTitle:"Everything you need to sing",whySubtitle:"Simple on purpose: find a hymn, open it, sing.",
+f1t:"100+ hymns",f1p:"The Nyimbo Za Umoja collection in one place, ready whenever you open the app.",
+f2t:"Works offline",f2p:"No data or Wi-Fi needed, so it is ready at church, at home or on the road.",
+f3t:"Search and favorites",f3p:"Find a hymn by name or number, and keep the ones you love in Favorites.",
+f4t:"English versions",f4p:"Flip a switch to read a hymn in English. More are being added over time.",
+f5t:"Read your way",f5p:"Choose light, dark or your phone's look, pick your reading font, and keep the screen on while you sing.",
+f6t:"Daily hymn reminder",f6p:"Get one encouraging hymn as a daily notification, at the time you choose.",
+readTitle:"Clear to read, easy to follow",readText:"Open any hymn and the words are right there, in large comfortable text.",
+read1:"The chorus stands out in blue, so everyone knows when to join in.",read2:"Move to the next or previous hymn with one tap.",read3:"Tap the heart to save a hymn to your Favorites.",read4:"Flip the switch to read a hymn in English. More English versions are being added.",
+idxTitle:"Browse the hymns",idxSub:"A taste of what is inside. Type a title or a number.",idxEmpty:"No match here, but the app has 100+ hymns to search.",idxMore:"...and many more inside the app.",
+installTitle:"Getting started takes a minute",installNote:"The app is installed straight from the download, so your phone may ask for a quick permission the first time.",
+step1:"Tap Download the app and wait for the file to finish.",step2:"Open the downloaded file from your notifications or Downloads folder.",step3:"If asked, allow installing from your browser, then tap Install.",step4:"Open NYIMBO ZA UMOJA and start singing.",
+faqTitle:"Questions, answered",q1:"Is the app really free?",a1:"Yes. NYIMBO ZA UMOJA is free to download and use.",
+q2:"Do I need internet to read the hymns?",a2:"No. Once the app is installed, the hymns work offline.",
+q3:"Why does my phone ask for permission to install?",a3:"The app is shared as a direct download instead of through an app store, so Android asks you to allow installs from your browser once. You can switch that permission off again after installing.",
+q4:"Can I read hymns in English?",a4:"Some hymns have an English version you can switch to with the toggle at the top of the hymn. More are being added over time.",
+q5:"A hymn has a mistake, or I want one added.",a5:"Tell us the hymn title or number and we will take a look.",a5l:"Message us on WhatsApp",
+storyTitle:"Made with love for the Church",storyText:"NYIMBO ZA UMOJA is a complete collection of Swahili Gospel Hymns to unite believers in worship, developed by Rolux Studios for the Church in Kenya and beyond.",
+contactTitle:"Talk to us",contactText:"Questions, feedback or a hymn to suggest? We would love to hear from you.",waBtn:"Chat on WhatsApp",mailBtn:"Send an email",shareBtn:"Share this app",directText:"Prefer to call or text?",
+readyTitle:"Ready to sing together?",readyText:"Get NYIMBO ZA UMOJA for Android today. It is free.",downloadFull:"Download NYIMBO ZA UMOJA",rights:"All rights reserved.",
+waHello:"Hello Rolux Studios, I am writing about the NYIMBO ZA UMOJA app.",waFix:"Hello Rolux Studios, about the NYIMBO ZA UMOJA app: I would like to report a mistake or request a hymn. Hymn title or number: ",
+mailSubj:"NYIMBO ZA UMOJA app",shareMsg:"Check out NYIMBO ZA UMOJA, a free app with 100+ Swahili gospel hymns that works offline:",searchPh:"Search..."},
+sw:{navFeatures:"Vipengele",navHymns:"Nyimbo",navFaq:"Maswali",navContact:"Wasiliana",
+heroTitle:"Nyimbo zako za Umoja, daima nawe.",heroSubtitle:"Zaidi ya nyimbo 100 za Injili za Kiswahili katika programu moja rahisi ya Android. Soma, tafuta na uimbe, hata bila intaneti.",downloadApp:"Pakua programu",meta:"Bure kwa Android \u2022 Inafanya kazi bila intaneti",
+whyTitle:"Kila unachohitaji ili kuimba",whySubtitle:"Rahisi kwa makusudi: tafuta wimbo, ufungue, uimbe.",
+f1t:"Nyimbo 100+",f1p:"Mkusanyiko wa Nyimbo za Umoja mahali pamoja, tayari kila unapofungua programu.",
+f2t:"Bila intaneti",f2p:"Hauhitaji data wala Wi-Fi, hivyo iko tayari kanisani, nyumbani au safarini.",
+f3t:"Tafuta na Vipendwa",f3p:"Tafuta wimbo kwa jina au namba, na uhifadhi uzipendazo kwenye Vipendwa.",
+f4t:"Matoleo ya Kiingereza",f4p:"Washa swichi kusoma wimbo kwa Kiingereza. Mengine yanaongezwa kadri muda unavyokwenda.",
+f5t:"Soma kwa namna yako",f5p:"Chagua mwanga, giza au mwonekano wa simu yako, chagua herufi za kusomea, na uweke skrini iwake ukiimba.",
+f6t:"Kikumbusho cha wimbo wa kila siku",f6p:"Pata wimbo mmoja wa kutia moyo kila siku kama arifa, kwa muda unaochagua.",
+readTitle:"Rahisi kusoma, rahisi kufuata",readText:"Fungua wimbo wowote na maneno yako hapo, kwa maandishi makubwa na yanayosomeka vizuri.",
+read1:"Kiitikio kinaonekana kwa rangi ya samawati, ili kila mtu ajue wakati wa kujiunga.",read2:"Nenda kwenye wimbo unaofuata au uliotangulia kwa kugusa mara moja.",read3:"Gusa moyo kuhifadhi wimbo kwenye Vipendwa.",read4:"Washa swichi kusoma wimbo kwa Kiingereza. Matoleo zaidi ya Kiingereza yanaongezwa.",
+idxTitle:"Vinjari nyimbo",idxSub:"Mfano mdogo wa kilichomo. Andika jina au namba.",idxEmpty:"Hakuna kinacholingana hapa, lakini programu ina nyimbo zaidi ya 100 za kutafuta.",idxMore:"...na nyingine nyingi ndani ya programu.",
+installTitle:"Kuanza kunachukua dakika moja",installNote:"Programu husakinishwa moja kwa moja kutoka kwenye faili uliyopakua, kwa hiyo simu yako inaweza kuomba ruhusa fupi mara ya kwanza.",
+step1:"Gusa Pakua programu na usubiri faili likamilike kupakuliwa.",step2:"Fungua faili hilo kutoka kwenye arifa zako au folda ya Downloads.",step3:"Ukiulizwa, ruhusu kusakinisha kutoka kwenye kivinjari chako, kisha gusa Sakinisha.",step4:"Fungua NYIMBO ZA UMOJA na uanze kuimba.",
+faqTitle:"Maswali na majibu",q1:"Je, programu ni bure kweli?",a1:"Ndiyo. NYIMBO ZA UMOJA ni bure kupakua na kutumia.",
+q2:"Je, ninahitaji intaneti kusoma nyimbo?",a2:"Hapana. Programu ikishasakinishwa, nyimbo zinafanya kazi bila intaneti.",
+q3:"Kwa nini simu yangu inaomba ruhusa ya kusakinisha?",a3:"Programu inatolewa kama faili la kupakua moja kwa moja badala ya kupitia duka la programu, hivyo Android inakuomba uruhusu usakinishaji kutoka kwenye kivinjari mara moja. Unaweza kuzima ruhusa hiyo baada ya kusakinisha.",
+q4:"Je, naweza kusoma nyimbo kwa Kiingereza?",a4:"Baadhi ya nyimbo zina toleo la Kiingereza unaloweza kuwasha kwa swichi juu ya wimbo. Mengine yanaongezwa kadri muda unavyokwenda.",
+q5:"Wimbo una kosa, au nataka mwingine uongezwe.",a5:"Tuambie jina au namba ya wimbo nasi tutaangalia.",a5l:"Tutumie ujumbe WhatsApp",
+storyTitle:"Imeundwa kwa upendo kwa ajili ya Kanisa",storyText:"NYIMBO ZA UMOJA ni mkusanyiko kamili wa Nyimbo za Injili za Kiswahili za kuwaunganisha waumini katika ibada, uliotengenezwa na Rolux Studios kwa ajili ya Kanisa nchini Kenya na kwingineko.",
+contactTitle:"Zungumza nasi",contactText:"Una swali, maoni au wimbo wa kupendekeza? Tungependa kusikia kutoka kwako.",waBtn:"Zungumza kwenye WhatsApp",mailBtn:"Tuma barua pepe",shareBtn:"Shiriki programu hii",directText:"Unapendelea kupiga simu au kutuma SMS?",
+readyTitle:"Tayari kuimba pamoja?",readyText:"Pata NYIMBO ZA UMOJA kwa Android leo. Ni bure.",downloadFull:"Pakua NYIMBO ZA UMOJA",rights:"Haki zote zimehifadhiwa.",
+waHello:"Habari Rolux Studios, nawasiliana kuhusu programu ya NYIMBO ZA UMOJA.",waFix:"Habari Rolux Studios, kuhusu programu ya NYIMBO ZA UMOJA: ningependa kuripoti kosa au kuomba wimbo. Jina au namba ya wimbo: ",
+mailSubj:"Programu ya NYIMBO ZA UMOJA",shareMsg:"Angalia NYIMBO ZA UMOJA, programu ya bure yenye nyimbo 100+ za Injili za Kiswahili inayofanya kazi bila intaneti:",searchPh:"Tafuta..."}
 };
+
+const HYMNS=[[1,"UMOJA"],[2,"JINA LA YESU"],[3,"UPENDO"],[4,"BWANA AMENITUMA"],[5,"SIKU ZA MWISHO"],[6,"KATIKA MJI WA TARSO"],[7,"NAMDHANI YESU MWOKOZI"],[8,"YESU NDIYE MZABIBU"],[9,"SHANGILIA"],[10,"SAFARI YA KUNGOJA"],[11,"YESU ALIKUFA"],[16,"MWANANGU KARIBU"]];
+const NUM="254710641256";
+const list=document.getElementById("list"),q=document.getElementById("q"),empty=document.getElementById("empty");
+list.innerHTML=HYMNS.map(h=>'<div class="hi" data-k="'+(h[0]+" "+h[1]).toLowerCase()+'"><b>'+h[0]+'</b><span>'+h[1]+'</span></div>').join("");
+q.addEventListener("input",()=>{
+  const v=q.value.trim().toLowerCase();let n=0;
+  list.querySelectorAll(".hi").forEach(e=>{const m=!v||e.dataset.k.includes(v);e.style.display=m?"":"none";if(m)n++});
+  empty.style.display=n?"none":"block";
+});
+
 const btns=document.querySelectorAll(".lang button");
+let cur="en";
+function wa(text){return "https://wa.me/"+NUM+"?text="+encodeURIComponent(text)}
 function setLang(l){
-  const s=T[l]?l:"en";
+  const s=T[l]?l:"en";cur=s;
   document.documentElement.lang=s;
   document.querySelectorAll("[data-i18n]").forEach(el=>{const v=T[s][el.dataset.i18n];if(v)el.textContent=v});
+  document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(T[s][a.dataset.wa])});
+  document.getElementById("mail").href="mailto:roluxstudios735@gmail.com?subject="+encodeURIComponent(T[s].mailSubj);
+  document.getElementById("share").href="https://wa.me/?text="+encodeURIComponent(T[s].shareMsg+" "+location.href.split("#")[0]);
+  q.placeholder=T[s].searchPh;
   btns.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===s)));
   try{localStorage.setItem("nyimboLanguage",s)}catch(e){}
 }
