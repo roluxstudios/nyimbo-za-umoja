@@ -70,6 +70,22 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:co
 .hy:first-of-type{border-top:0}
 @keyframes eq{0%,100%{height:4px}50%{height:14px}}
 
+
+.read{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.read .ph{order:-1}
+.phone.flat{transform:rotate(-2deg)}
+.rt{margin:0;padding:6px 18px;font:12px/1.5 Georgia,serif;color:#fff}.rt.ch{color:#3aa0e0;font-style:italic}
+.rb{display:grid;gap:7px;padding:6px 20px}
+.rb i{display:block;height:8px;border-radius:5px;background:rgba(255,255,255,.78)}
+.rb.ch i{background:#3aa0e0}
+.rn{display:flex;justify-content:space-between;align-items:center;padding:14px 20px 8px;font-size:18px}
+.rn em{font-style:normal;color:#aaa;font-size:15px}
+.sw{width:30px;height:16px;border-radius:9px;background:#555;position:relative;margin-left:6px}.sw::after{content:"";position:absolute;left:2px;top:2px;width:12px;height:12px;border-radius:50%;background:#ddd}
+.checks{display:grid;gap:12px;margin-top:22px;list-style:none}
+.checks li{display:flex;gap:12px;align-items:flex-start;color:var(--ink)}
+.checks li::before{content:"\2713";flex:none;width:24px;height:24px;border-radius:50%;background:var(--brand-2);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center;margin-top:2px}
+@media(max-width:800px){.read{grid-template-columns:1fr;gap:40px}.read .ph{order:0}}
+
 /* sections */
 section.s{padding:84px 0}
 h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.6px;margin-bottom:14px}
@@ -160,6 +176,30 @@ footer strong{color:var(--ink)}
   </div>
 </section>
 
+<section class="s" style="padding-top:0">
+  <div class="wrap read">
+    <div>
+      <h2 data-i18n="readTitle">Clear to read, easy to follow</h2>
+      <p class="sub" style="margin-bottom:0" data-i18n="readText">Open any hymn and the words are right there, in large comfortable text.</p>
+      <ul class="checks">
+        <li data-i18n="read1">The chorus stands out in blue, so everyone knows when to join in.</li>
+        <li data-i18n="read2">Move to the next or previous hymn with one tap.</li>
+        <li data-i18n="read4">Flip the switch to read a hymn in English. More English versions are being added.</li>
+        <li data-i18n="read3">Tap the heart to save a hymn to your Favorites.</li>
+      </ul>
+    </div>
+    <div class="ph">
+      <div class="phone flat" aria-hidden="true">
+        <div class="screen">
+          <div class="ab"><span>←</span><span>MWANANGU KARIBU</span><span>⋮</span></div>
+          <div class="rn"><span>←</span><span>16.</span><span>→</span><em>♥</em><u class="sw"></u></div>
+          <p class="rt ">1. Nilipopotea katika dhambini,<br>Nilikuwa kama mwana mpotevu<br>Yesu alikuja kuniponya mimi,<br>Akanirudisha kwa Babangu</p><p class="rt ch">Mwanangu karibu, mwanangu karibu<br>Tukae na Yesu Mwokozi wangu,<br>Aliyeniponya kutoka dhambini<br>Akanirudisha kwa Babangu x2</p><p class="rt ">2. Malaika pale wananingojea,<br>Mji wa Kanaani wako na Yesu<br>Aliyeniponya kutoka dhambi,<br>Akanirudisha kwa Babangu</p><p class="rt ">3. Nikienda mbinguni nitafurahia,<br>Nikae na Yesu Mwokozi wangu<br>Aliyeniponya kutoka dhambini,<br>Akanirudisha kwa Babangu</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="s" id="install" style="padding-top:0">
   <div class="wrap">
     <div class="panel">
@@ -195,8 +235,8 @@ footer strong{color:var(--ink)}
 
 <script>
 const T={
-en:{navInstall:"How to install",heroTitle:"Your Nyimbo Za Umoja hymns, always with you.",heroSubtitle:"100+ hymns in one simple Android app. Search, save your favorites and sing along, even without internet.",downloadApp:"Download the app",version:"Version 1.0.0 for Android \u2022 Works offline",whyTitle:"Everything you need to sing",whySubtitle:"Simple on purpose: find a hymn, open it, sing.",songsTitle:"100+ hymns",songsText:"The Nyimbo Za Umoja collection in one place, ready whenever you open the app.",easyTitle:"Works offline",easyText:"No data or Wi-Fi needed, so it is ready at church, at home or on the road.",lightTitle:"Search and favorites",lightText:"Find a hymn by name or number, and keep the ones you love in Favorites.",installTitle:"Getting started takes a minute",installNote:"The app is installed straight from the download, so your phone may ask for a quick permission the first time.",step1:"Tap Download the app and wait for the file to finish.",step2:"Open the downloaded file from your notifications or Downloads folder.",step3:"If asked, allow installing from your browser, then tap Install.",step4:"Open NYIMBO ZA UMOJA and start singing.",readyTitle:"Ready to sing together?",readyText:"Get NYIMBO ZA UMOJA for Android today.",downloadFull:"Download NYIMBO ZA UMOJA",rights:"All rights reserved."},
-sw:{navInstall:"Jinsi ya kusakinisha",heroTitle:"Nyimbo zako za Umoja, daima nawe.",heroSubtitle:"Zaidi ya nyimbo 100 katika programu moja rahisi ya Android. Tafuta, hifadhi uzipendazo na uimbe, hata bila intaneti.",downloadApp:"Pakua programu",version:"Toleo 1.0.0 la Android \u2022 Inafanya kazi bila intaneti",whyTitle:"Kila unachohitaji ili kuimba",whySubtitle:"Rahisi kwa makusudi: tafuta wimbo, ufungue, uimbe.",songsTitle:"Nyimbo 100+",songsText:"Mkusanyiko wa Umoja mahali pamoja, tayari kila unapofungua programu.",easyTitle:"Bila intaneti",easyText:"Hauhitaji data wala Wi-Fi, hivyo iko tayari kanisani, nyumbani au safarini.",lightTitle:"Tafuta na Vipendwa",lightText:"Tafuta wimbo kwa jina au namba, na uhifadhi uzipendazo kwenye Vipendwa.",installTitle:"Kuanza kunachukua dakika moja",installNote:"Programu husakinishwa moja kwa moja kutoka kwenye faili uliyopakua, kwa hiyo simu yako inaweza kuomba ruhusa fupi mara ya kwanza.",step1:"Gusa Pakua programu na usubiri faili likamilike kupakuliwa.",step2:"Fungua faili hilo kutoka kwenye arifa zako au folda ya Downloads.",step3:"Ukiulizwa, ruhusu kusakinisha kutoka kwenye kivinjari chako, kisha gusa Sakinisha.",step4:"Fungua NYIMBO ZA UMOJA na uanze kuimba.",readyTitle:"Tayari kuimba pamoja?",readyText:"Pata NYIMBO ZA UMOJA kwa Android leo.",downloadFull:"Pakua NYIMBO ZA UMOJA",rights:"Haki zote zimehifadhiwa."}
+en:{navInstall:"How to install",heroTitle:"Your Nyimbo Za Umoja hymns, always with you.",heroSubtitle:"100+ hymns in one simple Android app. Search, save your favorites and sing along, even without internet.",downloadApp:"Download the app",version:"Version 1.0.0 for Android \u2022 Works offline",whyTitle:"Everything you need to sing",whySubtitle:"Simple on purpose: find a hymn, open it, sing.",songsTitle:"100+ hymns",songsText:"The Nyimbo Za Umoja collection in one place, ready whenever you open the app.",easyTitle:"Works offline",easyText:"No data or Wi-Fi needed, so it is ready at church, at home or on the road.",lightTitle:"Search and favorites",lightText:"Find a hymn by name or number, and keep the ones you love in Favorites.",installTitle:"Getting started takes a minute",installNote:"The app is installed straight from the download, so your phone may ask for a quick permission the first time.",step1:"Tap Download the app and wait for the file to finish.",step2:"Open the downloaded file from your notifications or Downloads folder.",step3:"If asked, allow installing from your browser, then tap Install.",step4:"Open NYIMBO ZA UMOJA and start singing.",readyTitle:"Ready to sing together?",readyText:"Get NYIMBO ZA UMOJA for Android today.",downloadFull:"Download NYIMBO ZA UMOJA",rights:"All rights reserved.",readTitle:"Clear to read, easy to follow",readText:"Open any hymn and the words are right there, in large comfortable text.",read1:"The chorus stands out in blue, so everyone knows when to join in.",read2:"Move to the next or previous hymn with one tap.",read3:"Tap the heart to save a hymn to your Favorites.",read4:"Flip the switch to read a hymn in English. More English versions are being added."},
+sw:{navInstall:"Jinsi ya kusakinisha",heroTitle:"Nyimbo zako za Umoja, daima nawe.",heroSubtitle:"Zaidi ya nyimbo 100 katika programu moja rahisi ya Android. Tafuta, hifadhi uzipendazo na uimbe, hata bila intaneti.",downloadApp:"Pakua programu",version:"Toleo 1.0.0 la Android \u2022 Inafanya kazi bila intaneti",whyTitle:"Kila unachohitaji ili kuimba",whySubtitle:"Rahisi kwa makusudi: tafuta wimbo, ufungue, uimbe.",songsTitle:"Nyimbo 100+",songsText:"Mkusanyiko wa Umoja mahali pamoja, tayari kila unapofungua programu.",easyTitle:"Bila intaneti",easyText:"Hauhitaji data wala Wi-Fi, hivyo iko tayari kanisani, nyumbani au safarini.",lightTitle:"Tafuta na Vipendwa",lightText:"Tafuta wimbo kwa jina au namba, na uhifadhi uzipendazo kwenye Vipendwa.",installTitle:"Kuanza kunachukua dakika moja",installNote:"Programu husakinishwa moja kwa moja kutoka kwenye faili uliyopakua, kwa hiyo simu yako inaweza kuomba ruhusa fupi mara ya kwanza.",step1:"Gusa Pakua programu na usubiri faili likamilike kupakuliwa.",step2:"Fungua faili hilo kutoka kwenye arifa zako au folda ya Downloads.",step3:"Ukiulizwa, ruhusu kusakinisha kutoka kwenye kivinjari chako, kisha gusa Sakinisha.",step4:"Fungua NYIMBO ZA UMOJA na uanze kuimba.",readyTitle:"Tayari kuimba pamoja?",readyText:"Pata NYIMBO ZA UMOJA kwa Android leo.",downloadFull:"Pakua NYIMBO ZA UMOJA",rights:"Haki zote zimehifadhiwa.",readTitle:"Rahisi kusoma, rahisi kufuata",readText:"Fungua wimbo wowote na maneno yako hapo, kwa maandishi makubwa na yanayosomeka vizuri.",read1:"Kiitikio kinaonekana kwa rangi ya samawati, ili kila mtu ajue wakati wa kujiunga.",read2:"Nenda kwenye wimbo unaofuata au uliotangulia kwa kugusa mara moja.",read3:"Gusa moyo kuhifadhi wimbo kwenye Vipendwa.",read4:"Washa swichi kusoma wimbo kwa Kiingereza. Matoleo zaidi ya Kiingereza yanaongezwa."}
 };
 const btns=document.querySelectorAll(".lang button");
 function setLang(l){
