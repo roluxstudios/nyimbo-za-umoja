@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="description" content="NYIMBO ZA UMOJA — a simple, lightweight Android app for your Umoja songs.">
-<meta name="theme-color" content="#1b2559">
+<meta name="theme-color" content="#2e4a00">
 <meta name="google-site-verification" content="EwuKi2nYAp7Csap_HDh_r73a25KLR53MQ2I4If9VNqw" />
 <title>NYIMBO ZA UMOJA | Songs and Music</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,21 +12,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f4f6fb; --surface:#ffffff; --ink:#161c3a; --muted:#5a6280; --line:#dfe3ee;
-  --brand:#1b2559; --brand-2:#2d3a86; --sun:#f2a93b; --sun-ink:#3a2500;
-  --hero-a:#141b45; --hero-b:#26337a;
+  --bg:#f5f7ef; --surface:#ffffff; --ink:#1c2412; --muted:#5c6650; --line:#e0e6d0;
+  --brand:#3f6200; --brand-2:#4f7a00; --sun:#f2b84b; --sun-ink:#3a2a00;
+  --hero-a:#1d3000; --hero-b:#4a7200;
   --serif:"Fraunces",Georgia,"Times New Roman",serif;
   --sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#0e1227; --surface:#161c3a; --ink:#eef0fa; --muted:#a3abc9; --line:#262e56;
-    --brand:#aab6ff; --brand-2:#c3ccff;
+    --bg:#141612; --surface:#1f221b; --ink:#eef2e6; --muted:#aab39a; --line:#2e3328;
+    --brand:#b8e063; --brand-2:#6a9a10;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0e1227; --surface:#161c3a; --ink:#eef0fa; --muted:#a3abc9; --line:#262e56;
-  --brand:#aab6ff; --brand-2:#c3ccff;
+  --bg:#141612; --surface:#1f221b; --ink:#eef2e6; --muted:#aab39a; --line:#2e3328;
+  --brand:#b8e063; --brand-2:#6a9a10;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -52,27 +52,23 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:co
 .hero{background:linear-gradient(160deg,var(--hero-a),var(--hero-b));color:#fff;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:76px;padding-bottom:84px}
 .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,6vw,62px);line-height:1.06;letter-spacing:-1.2px;margin-bottom:20px}
-.hero p.lead{font-size:clamp(17px,2.2vw,20px);color:#d5dafa;max-width:30em;margin-bottom:34px}
+.hero p.lead{font-size:clamp(17px,2.2vw,20px);color:#dfeac4;max-width:30em;margin-bottom:34px}
 .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--sun);color:var(--sun-ink);font-weight:700;font-size:17px;text-decoration:none;padding:15px 26px;border-radius:14px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.32)}
-.meta{font-size:14px;color:#b9c0ee}
+.meta{font-size:14px;color:#c3d49a}
 
 /* phone */
-.phone{width:min(270px,100%);margin:0 auto;aspect-ratio:9/18;background:#0b0f26;border-radius:38px;padding:11px;box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 2px rgba(255,255,255,.08);transform:rotate(3deg)}
-.screen{height:100%;border-radius:28px;background:linear-gradient(180deg,#2a3790,#161c4a);padding:22px 18px;display:flex;flex-direction:column;color:#fff}
-.screen small{color:#b9c0ee;font-size:12px}
-.screen h4{font-family:var(--serif);font-size:20px;margin:2px 0 14px}
-.row{display:flex;align-items:center;gap:11px;padding:10px 0;border-top:1px solid rgba(255,255,255,.1);font-size:14px}
-.row b{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:13px}
-.row.on b{background:var(--sun);color:var(--sun-ink)}
-.row.on{font-weight:700}
-.eq{margin-left:auto;display:flex;gap:2px;align-items:flex-end;height:14px}
-.eq span{width:3px;background:var(--sun);border-radius:2px;animation:eq 1s ease-in-out infinite}
-.eq span:nth-child(2){animation-delay:.2s}.eq span:nth-child(3){animation-delay:.4s}
+.phone{width:min(280px,100%);margin:0 auto;aspect-ratio:9/18;background:#0b0d08;border-radius:38px;padding:11px;box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 2px rgba(255,255,255,.08);transform:rotate(3deg)}
+.screen{height:100%;border-radius:28px;background:#2f2f2f;color:#fff;overflow:hidden;display:flex;flex-direction:column;font-size:13px}
+.ab{background:#669900;padding:16px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:500;letter-spacing:.2px}
+.tabs{display:flex;gap:8px;padding:10px}
+.tabs span{flex:1;text-align:center;padding:9px 0;border-radius:12px;background:#4a6a10;color:#c9d6a8}
+.tabs span:first-child{background:#669900;color:#fff;font-weight:700}
+.srch{margin:0 14px 4px;padding:8px 2px;border-bottom:1px solid #666;color:#999}
+.hy{padding:11px 14px;border-top:1px solid #444;font-family:Georgia,serif;font-size:13px}
+.hy:first-of-type{border-top:0}
 @keyframes eq{0%,100%{height:4px}50%{height:14px}}
-.bar{margin-top:auto;height:4px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
-.bar i{display:block;width:38%;height:100%;background:var(--sun)}
 
 /* sections */
 section.s{padding:84px 0}
@@ -92,7 +88,7 @@ ol li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:
 
 .final{text-align:center;background:linear-gradient(160deg,var(--hero-a),var(--hero-b));color:#fff;border-radius:28px;padding:64px 24px}
 .final h2{margin-bottom:10px}
-.final p{color:#d5dafa;margin-bottom:28px}
+.final p{color:#dfeac4;margin-bottom:28px}
 
 footer{border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:14px;padding:30px 20px 40px}
 footer strong{color:var(--ink)}
@@ -126,23 +122,27 @@ footer strong{color:var(--ink)}
 <section class="hero" id="top">
   <div class="wrap">
     <div>
-      <h1 data-i18n="heroTitle">Your Umoja songs, in your pocket.</h1>
-      <p class="lead" data-i18n="heroSubtitle">A simple, lightweight Android app that makes it easy to sing along, wherever you are.</p>
+      <h1 data-i18n="heroTitle">Your Umoja hymns, always with you.</h1>
+      <p class="lead" data-i18n="heroSubtitle">100+ hymns in one simple Android app. Search, save your favorites and sing along, even without internet.</p>
       <div class="cta">
         <a class="btn" href="https://github.com/roluxstudios/nyimbo-za-umoja/releases/download/v1.0.0/NYIMBO-ZA-UMOJA-v1.0.0.apk">
           <span aria-hidden="true">⬇</span><span data-i18n="downloadApp">Download the app</span>
         </a>
-        <span class="meta" data-i18n="version">Version 1.0.0 for Android</span>
+        <span class="meta" data-i18n="version">Version 1.0.0 for Android • Works offline</span>
       </div>
     </div>
     <div class="phone" aria-hidden="true">
       <div class="screen">
-        <small data-i18n="phoneLabel">Now playing</small>
-        <h4>Nyimbo za Umoja</h4>
-        <div class="row on"><b>♪</b><span data-i18n="song1">Wimbo wa kwanza</span><span class="eq"><span></span><span></span><span></span></span></div>
-        <div class="row"><b>♪</b><span data-i18n="song2">Wimbo wa pili</span></div>
-        <div class="row"><b>♪</b><span data-i18n="song3">Wimbo wa tatu</span></div>
-        <div class="bar"><i></i></div>
+        <div class="ab"><span>☰</span><span>NYIMBO ZA UMOJA</span><span>⋮</span></div>
+        <div class="tabs"><span>All</span><span>Favorites ❤️</span></div>
+        <div class="srch">🔍 Search...</div>
+        <div class="hy">1.UMOJA</div>
+        <div class="hy">2.JINA LA YESU</div>
+        <div class="hy">3.UPENDO</div>
+        <div class="hy">4.BWANA AMENITUMA</div>
+        <div class="hy">5.SIKU ZA MWISHO</div>
+        <div class="hy">6.KATIKA MJI WA TARSO</div>
+        <div class="hy">7.NAMDHANI YESU MWOKOZI</div>
       </div>
     </div>
   </div>
@@ -150,12 +150,12 @@ footer strong{color:var(--ink)}
 
 <section class="s">
   <div class="wrap">
-    <h2 data-i18n="whyTitle">Made to be simple</h2>
-    <p class="sub" data-i18n="whySubtitle">No clutter and no fuss. Just open the app and enjoy your songs.</p>
+    <h2 data-i18n="whyTitle">Everything you need to sing</h2>
+    <p class="sub" data-i18n="whySubtitle">Simple on purpose: find a hymn, open it, sing.</p>
     <div class="points">
-      <div class="pt"><div class="ic" aria-hidden="true">🎶</div><h3 data-i18n="songsTitle">Your songs</h3><p data-i18n="songsText">Enjoy your collection of Umoja songs in one place on your phone.</p></div>
-      <div class="pt"><div class="ic" aria-hidden="true">👋</div><h3 data-i18n="easyTitle">Easy for everyone</h3><p data-i18n="easyText">A clear, friendly layout that feels comfortable for every age, every day.</p></div>
-      <div class="pt"><div class="ic" aria-hidden="true">🪶</div><h3 data-i18n="lightTitle">Light on your phone</h3><p data-i18n="lightText">Small and focused, so it stays quick and out of your way.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">📖</div><h3 data-i18n="songsTitle">100+ hymns</h3><p data-i18n="songsText">The Umoja collection in one place, ready whenever you open the app.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">📶</div><h3 data-i18n="easyTitle">Works offline</h3><p data-i18n="easyText">No data or Wi-Fi needed, so it is ready at church, at home or on the road.</p></div>
+      <div class="pt"><div class="ic" aria-hidden="true">🔎</div><h3 data-i18n="lightTitle">Search and favorites</h3><p data-i18n="lightText">Find a hymn by name or number, and keep the ones you love in Favorites.</p></div>
     </div>
   </div>
 </section>
@@ -195,8 +195,8 @@ footer strong{color:var(--ink)}
 
 <script>
 const T={
-en:{navInstall:"How to install",heroTitle:"Your Umoja songs, in your pocket.",heroSubtitle:"A simple, lightweight Android app that makes it easy to sing along, wherever you are.",downloadApp:"Download the app",version:"Version 1.0.0 for Android",phoneLabel:"Now playing",song1:"First song",song2:"Second song",song3:"Third song",whyTitle:"Made to be simple",whySubtitle:"No clutter and no fuss. Just open the app and enjoy your songs.",songsTitle:"Your songs",songsText:"Enjoy your collection of Umoja songs in one place on your phone.",easyTitle:"Easy for everyone",easyText:"A clear, friendly layout that feels comfortable for every age, every day.",lightTitle:"Light on your phone",lightText:"Small and focused, so it stays quick and out of your way.",installTitle:"Getting started takes a minute",installNote:"The app is installed straight from the download, so your phone may ask for a quick permission the first time.",step1:"Tap Download the app and wait for the file to finish.",step2:"Open the downloaded file from your notifications or Downloads folder.",step3:"If asked, allow installing from your browser, then tap Install.",step4:"Open NYIMBO ZA UMOJA and start singing.",readyTitle:"Ready to sing together?",readyText:"Get NYIMBO ZA UMOJA for Android today.",downloadFull:"Download NYIMBO ZA UMOJA",rights:"All rights reserved."},
-sw:{navInstall:"Jinsi ya kusakinisha",heroTitle:"Nyimbo zako za Umoja, mfukoni mwako.",heroSubtitle:"Programu rahisi na nyepesi ya Android inayokuwezesha kuimba popote ulipo.",downloadApp:"Pakua programu",version:"Toleo 1.0.0 la Android",phoneLabel:"Inachezwa sasa",song1:"Wimbo wa kwanza",song2:"Wimbo wa pili",song3:"Wimbo wa tatu",whyTitle:"Imeundwa kuwa rahisi",whySubtitle:"Hakuna mambo mengi wala usumbufu. Fungua programu na ufurahie nyimbo zako.",songsTitle:"Nyimbo zako",songsText:"Furahia mkusanyiko wako wa nyimbo za Umoja mahali pamoja kwenye simu yako.",easyTitle:"Rahisi kwa kila mtu",easyText:"Muonekano wazi na wa kirafiki unaofaa kila rika, kila siku.",lightTitle:"Nyepesi kwenye simu yako",lightText:"Ndogo na iliyolenga mambo muhimu, hivyo ni ya haraka na haikusumbui.",installTitle:"Kuanza kunachukua dakika moja",installNote:"Programu husakinishwa moja kwa moja kutoka kwenye faili uliyopakua, kwa hiyo simu yako inaweza kuomba ruhusa fupi mara ya kwanza.",step1:"Gusa Pakua programu na usubiri faili likamilike kupakuliwa.",step2:"Fungua faili hilo kutoka kwenye arifa zako au folda ya Downloads.",step3:"Ukiulizwa, ruhusu kusakinisha kutoka kwenye kivinjari chako, kisha gusa Sakinisha.",step4:"Fungua NYIMBO ZA UMOJA na uanze kuimba.",readyTitle:"Tayari kuimba pamoja?",readyText:"Pata NYIMBO ZA UMOJA kwa Android leo.",downloadFull:"Pakua NYIMBO ZA UMOJA",rights:"Haki zote zimehifadhiwa."}
+en:{navInstall:"How to install",heroTitle:"Your Umoja hymns, always with you.",heroSubtitle:"100+ hymns in one simple Android app. Search, save your favorites and sing along, even without internet.",downloadApp:"Download the app",version:"Version 1.0.0 for Android \u2022 Works offline",whyTitle:"Everything you need to sing",whySubtitle:"Simple on purpose: find a hymn, open it, sing.",songsTitle:"100+ hymns",songsText:"The Umoja collection in one place, ready whenever you open the app.",easyTitle:"Works offline",easyText:"No data or Wi-Fi needed, so it is ready at church, at home or on the road.",lightTitle:"Search and favorites",lightText:"Find a hymn by name or number, and keep the ones you love in Favorites.",installTitle:"Getting started takes a minute",installNote:"The app is installed straight from the download, so your phone may ask for a quick permission the first time.",step1:"Tap Download the app and wait for the file to finish.",step2:"Open the downloaded file from your notifications or Downloads folder.",step3:"If asked, allow installing from your browser, then tap Install.",step4:"Open NYIMBO ZA UMOJA and start singing.",readyTitle:"Ready to sing together?",readyText:"Get NYIMBO ZA UMOJA for Android today.",downloadFull:"Download NYIMBO ZA UMOJA",rights:"All rights reserved."},
+sw:{navInstall:"Jinsi ya kusakinisha",heroTitle:"Nyimbo zako za Umoja, daima nawe.",heroSubtitle:"Zaidi ya nyimbo 100 katika programu moja rahisi ya Android. Tafuta, hifadhi uzipendazo na uimbe, hata bila intaneti.",downloadApp:"Pakua programu",version:"Toleo 1.0.0 la Android \u2022 Inafanya kazi bila intaneti",whyTitle:"Kila unachohitaji ili kuimba",whySubtitle:"Rahisi kwa makusudi: tafuta wimbo, ufungue, uimbe.",songsTitle:"Nyimbo 100+",songsText:"Mkusanyiko wa Umoja mahali pamoja, tayari kila unapofungua programu.",easyTitle:"Bila intaneti",easyText:"Hauhitaji data wala Wi-Fi, hivyo iko tayari kanisani, nyumbani au safarini.",lightTitle:"Tafuta na Vipendwa",lightText:"Tafuta wimbo kwa jina au namba, na uhifadhi uzipendazo kwenye Vipendwa.",installTitle:"Kuanza kunachukua dakika moja",installNote:"Programu husakinishwa moja kwa moja kutoka kwenye faili uliyopakua, kwa hiyo simu yako inaweza kuomba ruhusa fupi mara ya kwanza.",step1:"Gusa Pakua programu na usubiri faili likamilike kupakuliwa.",step2:"Fungua faili hilo kutoka kwenye arifa zako au folda ya Downloads.",step3:"Ukiulizwa, ruhusu kusakinisha kutoka kwenye kivinjari chako, kisha gusa Sakinisha.",step4:"Fungua NYIMBO ZA UMOJA na uanze kuimba.",readyTitle:"Tayari kuimba pamoja?",readyText:"Pata NYIMBO ZA UMOJA kwa Android leo.",downloadFull:"Pakua NYIMBO ZA UMOJA",rights:"Haki zote zimehifadhiwa."}
 };
 const btns=document.querySelectorAll(".lang button");
 function setLang(l){
